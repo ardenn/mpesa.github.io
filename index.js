@@ -1,5 +1,5 @@
 let phoneRe, phoneInput, messageBoard, messageIcon, phoneIcon, transactionStatus, awaitingPin = false;
-const payUrl = "http://127.0.0.1:5000/mpesa/trigger"
+const payUrl = "https://zn2j0ba920.execute-api.eu-central-1.amazonaws.com/staging/mpesa/trigger"
 const payButton = document.getElementById("payBtn");
 payButton.addEventListener("click", function () { createPopup(this.dataset.amount) }, false);
 function createPopup(amount) {
