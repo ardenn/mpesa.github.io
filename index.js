@@ -14,6 +14,14 @@ function createPopup(amount) {
     phoneRe = /^(\+254|0)7(1|2|9|4|0)(\d{7})$/;
     phoneInput = document.getElementById("phone");
     phoneIcon = document.getElementById("icon");
+
+    const ws = new WebSocket("ws://127.0.0.1:5050/mpesaresponse");
+    ws.onmessage = function (event) {
+        console.log(event.data);
+    }
+    ws.onopen = function (event) {
+        console.log(event);
+    }
 }
 function validatePhone(no) {
     cleanNumber = no.replace(" ", "");
